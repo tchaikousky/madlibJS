@@ -1,34 +1,23 @@
-const submitButton = document.getElementById("submit");
-const reloadButton = document.getElementById("reload");
-const friendName = document.getElementById("friendName");
-const numberOfHours = document.getElementById("numberOfHours");
-const transportation = document.getElementById("transportation");
-const adjective1 = document.getElementById("adjective1");
-const adjective2 = document.getElementById("adjective2");
-const verb1 = document.getElementById("verb1");
-const animal = document.getElementById("animal");
-const adjective3 = document.getElementById("adjective3");
-const pastTenseVerb1 = document.getElementById("pastTenseVerb1");
-const adjective4 = document.getElementById("adjective4");
-const noun = document.getElementById("noun");
-const pastTenseVerb2 = document.getElementById("pastTenseVerb2");
-const pastTenseVerb3 = document.getElementById("pastTenseVerb3");
-const place = document.getElementById("place");
-const verb2 = document.getElementById("verb2");
-
-
+const submitButton = document.querySelector(`#submit`);
+const reloadButton = document.querySelector("#reload");
+const entryList = document.querySelectorAll(".entryList");
 
 submitButton.addEventListener("click", function(e){
+    tempArray = [];
     e.preventDefault();
+
+    entryList.forEach(function(entry, index) {
+        tempArray.push(entry.value);
+    });
     
-    madLibStory.innerHTML = `Last month, I went to Disney World with ${friendName.value}. 
-    We traveled for ${numberOfHours.value} hours by ${transportation.value}.
-    Finally, we got there and it was very ${adjective1.value}. There were ${adjective2.value}
-    people ${verb1.value} everywhere. There were also people dressed up in ${animal.value} costumes.
-     I wish it had been more ${adjective3.value}, but we ${pastTenseVerb1.value} anyway. We also went on some
-    ${adjective4.value} rides, called "${noun.value}". ${friendName.value} nearly fell off a ride and had to be ${pastTenseVerb2.value}.
-    Later we went to the hotel and ${pastTenseVerb3.value}. Next year, I want to go to ${place.value}, where we can
-    ${verb2.value}.`;
+    madLibStory.innerHTML = `Last month, I went to Disney World with ${tempArray[0]}. 
+    We traveled for ${tempArray[1]} hours by ${tempArray[2]}.
+    Finally, we got there and it was very ${tempArray[3].value}. There were ${tempArray[4]}
+    people ${tempArray[5]} everywhere. There were also people dressed up in ${tempArray[6]} costumes.
+     I wish it had been more ${tempArray[7]}, but we ${tempArray[8]} anyway. We also went on some
+    ${tempArray[9]} rides, called "${tempArray[10]}". ${tempArray[0]} nearly fell off a ride and had to be ${tempArray[11]}.
+    Later we went to the hotel and ${tempArray[12]}. Next year, I want to go to ${tempArray[13]}, where we can
+    ${tempArray[14]}.`;
     
     formId.innerHTML = "";
     
