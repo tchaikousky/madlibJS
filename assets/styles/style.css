@@ -1,0 +1,21 @@
+.classContainer {
+    justify-content: left;
+
+}
+
+.form {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 5rem;
+    width: 100%;
+     
+}
+
+#madLibStory {
+    font-size: 16px;
+    font-weight: normal;
+    font-family: sans-serif;
+    letter-spacing: normal;
+    line-height: 25px;
+}
